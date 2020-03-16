@@ -150,11 +150,22 @@ header {
     display: flex;
 }
 
-.widget-container-full {
-    background-image: url("images/linegraphExample.png");
-}
-
 .traffic-nav {
     display: flex;
     flex-direction: row;
+    margin-left: auto;
+}
+
+.traffic-nav-link {
+    margin: 0 15px;
+    list-style-type: none;
+}
+
+.active {
+    background-color: green;
+    border-radius: 4px;
+}
+
+.widget-container-full {
+    background-image: url("/images/lineGraphExample.png");
 }
