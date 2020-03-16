@@ -1,3 +1,4 @@
+// main styles //
 a {
     text-decoration: none;
     display: inline-block;
@@ -22,8 +23,7 @@ a {
     grid-template-areas: 
     "header"
     "navigation"
-    "main"
-    ;
+    "main";
 }
 
 header {
@@ -31,19 +31,17 @@ header {
 }
 
 nav {
-    grid-area: nav;
+    grid-area: navigation;
+    background-color: lightblue;
 }
 
-.alert,
-.traffic,
-.daily,
-.mobile,
-.social-container,
-.members,
-.activity,
-.message,
-.settings {
+main {
     grid-area: main;
+    display: grid;
+}
+
+.widget-container-full, .widget-container-half {
+    width: 95vw;
 }
 
 @media (min-width: 768px) {
@@ -53,4 +51,110 @@ nav {
         "header header"
         "navigation main";
     }
+    .main {
+        grid-template-columns: 50%;
+    }
+    .traffic, .social {
+        grid-column: 1 / span 2;
+    }
+    .daily, .members, .message {
+        grid-column: 1 / span 1;
+    }
+    .mobile, .activity, .settings {
+        grid-column: 2 /span 1;
+    }
+    .widget-container-full {
+        width: 90vw;
+    }
+    .widget-container-half {
+        width: 45vw;
+    }
+}
+
+//  Header styles  //
+
+#bellIcon {
+    height: 25px;
+    width:  25px;
+}
+
+#bellIcon path{
+    fill: black;
+}
+
+.profile-img {
+    height: 35px;
+    width:  35px;
+    border-radius: 50% 50%;
+    margin-left: 40px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(92, 107, 190);
+}
+
+.bell-icon {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.bell-icon h3{
+    font-size: 12px;
+    margin: 0 20px 0 5px;
+}
+
+#header-vertical-line{ 
+    margin: 0 10px;
+    transform: rotate(90deg);
+    color: black;
+    height: 0;
+    width: 20%;
+}
+
+
+// alert banner 
+
+.alert {
+    height: 4em;
+}
+
+// navigation styles
+
+.headline {
+    margin: 15px 15px;
+}
+
+.main-header {
+    display: flex;
+
+}
+
+.main-header-search {
+    border-radius: 0 0 0 10px;
+    background: red;
+    width: 100%;
+}
+
+.main-header-search input{
+    float: right;
+    width: 15em;
+}
+
+
+//traffic 
+
+.traffic-header {
+    display: flex;
+}
+
+.widget-container-full {
+    background-image: url("images/linegraphExample.png");
+}
+
+.traffic-nav {
+    display: flex;
+    flex-direction: row;
 }
