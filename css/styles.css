@@ -147,16 +147,6 @@ header {
   border-radius: 20px;
 }
 
-#traffic-chart {
-  background-image: url("../images/lineGraphExample.png");
-  background-repeat: no-repeat;
-}
-
-#daily-chart {
-  background-image: url("../images/bargraphExample.png");
-  background-repeat: no-repeat;
-}
-
 .social {
   display: flex;
   flex-direction: row;
@@ -188,6 +178,10 @@ header {
 .settings, .message {
   display: flex;
   flex-direction: column;
+}
+
+#traffic-chart {
+  width: 90vw;
 }
 
 @media (max-width: 767px) {

@@ -166,16 +166,6 @@ header {
     border-radius: 20px;
 }
 
-#traffic-chart {
-    background-image: url("../images/lineGraphExample.png");
-    background-repeat: no-repeat;
-}
-
-#daily-chart {
-    background-image: url("../images/bargraphExample.png");
-    background-repeat: no-repeat;
-}
-
 // social media div styles
 
 .social {
@@ -211,6 +201,12 @@ header {
 .settings, .message {
     display: flex;
     flex-direction: column;
+}
+
+// Charts
+
+#traffic-chart {
+    width: 90vw;
 }
 
 @media(max-width: 767px) {
@@ -267,7 +263,7 @@ header {
         padding: 40px;
     }
 
-    .daily, {
+    .daily {
         border-left: none;
     }
     .mobile {
