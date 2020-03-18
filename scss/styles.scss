@@ -1,4 +1,17 @@
+//  Descriptive colors    //@extend
+$black: black;
+$white: #FFF;
+$wild-dove: rgb(138, 138, 138);
+
+// Base style colors //
+
+$border-color: $wild-dove;
+
+
+
 // main styles //
+
+
 body {
     margin: 0;
 }
@@ -25,13 +38,14 @@ a {
   .activity,
   .message,
   .settings {
-    padding: 20px 40px;
-    border-top: 1px solid black;
+    padding: 20px;
+    border-top: 1px solid $wild-dove;
 }
 
 //   Grid   //
 
 .grid-container {
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -81,7 +95,11 @@ main {
 header {
     display: flex;
     flex-direction: row;
-    background-color: rgb(92, 107, 190);
+    background-color: rgb(118, 120, 221);
+}
+
+header h5 {
+    margin-left: 10px;
 }
 
 .bell-icon {
@@ -110,6 +128,18 @@ header {
     height: 4em;
 }
 
+//nav icons 
+
+.navIcon {
+    height: 25px;
+    width:  25px;
+}
+
+
+.navIcon path{
+    fill: $black;
+}
+
 // navigation styles
 
 .headline {
@@ -136,7 +166,7 @@ header {
     height: 40px;
     padding-left: 10px;
     background: rgb(255, 255, 255);
-    border: 1px solid black;
+    border: 1px solid $wild-dove;
     border-right: none;
     border-radius: 10px 0 0 10px;
     font-size: 14px;
@@ -153,16 +183,17 @@ header {
     display: flex;
     flex-direction: row;
     margin-left: auto;
+    padding: 0;
 }
 
 .traffic-nav-link {
-    margin: auto 0 auto 30px;
+    margin: auto 0 auto 5px;
     list-style-type: none;
 }
 
 .active {
     background-color: rgb(157, 245, 157);
-    padding: 8px 15px;
+    padding: 2px 5px;
     border-radius: 20px;
 }
 
@@ -180,12 +211,11 @@ header {
 #social-2,
 #social-3 {
     display: flex;
-    border: 1px solid black;
-    padding: 40px 20px;
+    border: 1px solid $wild-dove;
 }
 
 .media-logo {
-    margin: 14px;
+    margin: 14px 4px 0 4px;
 }
 
 // message & settings 
@@ -194,7 +224,7 @@ header {
     width: 100%;
     padding: 1em 0;
     margin-top: .5em;
-    border: 1px solid grey;
+    border: 1px solid $wild-dove;
     border-radius: 5px;
 }
 
@@ -204,10 +234,6 @@ header {
 }
 
 // Charts
-
-#traffic-chart {
-    width: 90vw;
-}
 
 @media(max-width: 767px) {
     .members-container, .activity-container, .widget-container, .form-field, .settings-button {
@@ -254,13 +280,13 @@ header {
         width: 45vw;
     }
     .main-header-search input{
-        margin: 1em 4em 1em auto;
-        border: 1px solid black;
+        margin: .25em 1em 1em auto;
+        border: 1px solid $wild-dove;
         border-radius: 10px;
     }    
     .daily, .mobile {
-        border: 1px solid black;
-        padding: 40px;
+        border: 1px solid $wild-dove;
+        padding: 5px 0px;
     }
 
     .daily {
@@ -275,26 +301,69 @@ header {
         justify-content: space-around;
     }
     .s-media-container {
-        border-top: none;;
+        border-top: none;
     }
     
     #social-1, 
     #social-2,
     #social-3 {
-        padding: 40px;
+        padding: 5px;
     }
     
+    .profile-image {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+
+    .members-text {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        justify-content: center;
+    }
+    
+    .members-text a {
+        color: black;
+        padding: 0;
+    }
+
+    .members-text h3 {
+        margin: 0;
+    }
+
+    .members-container {
+        display:flex;
+        flex-direction: row;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $wild-dove;
+        margin-top: 20px;
+    }
+
+    .members-container p {
+        margin: auto 0;
+    }
+
+    .next {
+        color: black;
+        font-size: 40px;
+    }
+
+    .next:hover, .members-text a:hover {
+        color: rgb(0, 255, 255);
+        transition: .5s;
+    }
+
     .members,
     .message {
-        padding: 20px 0 20px 40px;
-    }
-    .members-container, .activity-container, .widget-container, .form-field {
-        width: 40vw;
+        padding-top: 5px;
+        padding-left: 20px;
     }
 
     .activity,
     .settings {
-        padding: 20px 40px 20px 0;
+        padding-top: 5px;
     }
 
     #userField {

@@ -1,4 +1,7 @@
+// Line chart variable
 let trafficCanvas = document.getElementById('traffic-chart');
+
+
 
 let trafficData = {
     labels: [ "16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31" ],
@@ -29,27 +32,12 @@ let trafficOptions = {
 };
 
 
-// ​let​ trafficOptions = { 
-//     aspectRatio: ​2.5​, 
-//     animation: {
-//         duration: ​0 
-//     },
-//     scales: {
-//         yAxes: [{
-//             ticks: { beginAtZero:​true
-//             } 
-//         }]
-//     },
-// legend : {
-// display: ​false }
-// };
-
-
-
-// line graph
-
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficData,
     options: trafficOptions
 });
+
+
+//Alert banner //
+

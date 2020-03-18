@@ -24,11 +24,12 @@ a:hover {
 .activity,
 .message,
 .settings {
-  padding: 20px 40px;
-  border-top: 1px solid black;
+  padding: 20px;
+  border-top: 1px solid #8a8a8a;
 }
 
 .grid-container {
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
@@ -71,7 +72,11 @@ main {
 header {
   display: flex;
   flex-direction: row;
-  background-color: #5c6bbe;
+  background-color: #7678dd;
+}
+
+header h5 {
+  margin-left: 10px;
 }
 
 .bell-icon {
@@ -97,6 +102,15 @@ header {
   height: 4em;
 }
 
+.navIcon {
+  height: 25px;
+  width: 25px;
+}
+
+.navIcon path {
+  fill: black;
+}
+
 .headline {
   margin: 15px 15px;
 }
@@ -120,7 +134,7 @@ header {
   height: 40px;
   padding-left: 10px;
   background: white;
-  border: 1px solid black;
+  border: 1px solid #8a8a8a;
   border-right: none;
   border-radius: 10px 0 0 10px;
   font-size: 14px;
@@ -134,16 +148,17 @@ header {
   display: flex;
   flex-direction: row;
   margin-left: auto;
+  padding: 0;
 }
 
 .traffic-nav-link {
-  margin: auto 0 auto 30px;
+  margin: auto 0 auto 5px;
   list-style-type: none;
 }
 
 .active {
   background-color: #9df59d;
-  padding: 8px 15px;
+  padding: 2px 5px;
   border-radius: 20px;
 }
 
@@ -159,29 +174,24 @@ header {
 #social-2,
 #social-3 {
   display: flex;
-  border: 1px solid black;
-  padding: 40px 20px;
+  border: 1px solid #8a8a8a;
 }
 
 .media-logo {
-  margin: 14px;
+  margin: 14px 4px 0 4px;
 }
 
 #userField, #messageField, #timezone, .button-primary, #cancel {
   width: 100%;
   padding: 1em 0;
   margin-top: 0.5em;
-  border: 1px solid grey;
+  border: 1px solid #8a8a8a;
   border-radius: 5px;
 }
 
 .settings, .message {
   display: flex;
   flex-direction: column;
-}
-
-#traffic-chart {
-  width: 90vw;
 }
 
 @media (max-width: 767px) {
@@ -232,14 +242,14 @@ header {
   }
 
   .main-header-search input {
-    margin: 1em 4em 1em auto;
-    border: 1px solid black;
+    margin: 0.25em 1em 1em auto;
+    border: 1px solid #8a8a8a;
     border-radius: 10px;
   }
 
   .daily, .mobile {
-    border: 1px solid black;
-    padding: 40px;
+    border: 1px solid #8a8a8a;
+    padding: 5px 0px;
   }
 
   .daily {
@@ -262,21 +272,63 @@ header {
   #social-1,
 #social-2,
 #social-3 {
-    padding: 40px;
+    padding: 5px;
+  }
+
+  .profile-image {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  .members-text {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .members-text a {
+    color: black;
+    padding: 0;
+  }
+
+  .members-text h3 {
+    margin: 0;
+  }
+
+  .members-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #8a8a8a;
+    margin-top: 20px;
+  }
+
+  .members-container p {
+    margin: auto 0;
+  }
+
+  .next {
+    color: black;
+    font-size: 40px;
+  }
+
+  .next:hover, .members-text a:hover {
+    color: aqua;
+    transition: 0.5s;
   }
 
   .members,
 .message {
-    padding: 20px 0 20px 40px;
-  }
-
-  .members-container, .activity-container, .widget-container, .form-field {
-    width: 40vw;
+    padding-top: 5px;
+    padding-left: 20px;
   }
 
   .activity,
 .settings {
-    padding: 20px 40px 20px 0;
+    padding-top: 5px;
   }
 
   #userField {
