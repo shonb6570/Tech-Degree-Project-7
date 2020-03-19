@@ -1,12 +1,23 @@
 //  Descriptive colors    //@extend
-$black: black;
-$white: #FFF;
-$wild-dove: rgb(138, 138, 138);
+$cod-grey:          #666666;
+$white:             #FFF;
+$wild-dove:         #8a8a8a;
+$ship-cove:         #7477BF;
+$mulled-wine:       #4D4C72;
+$spun-pearl:        #A6A6B9;
+$de-york:           #81C98F;
+$wistful:           #ACADD7;
+$glacier:           #73B1BF;
+$ship-cove-lighter: #7377BF;
 
 // Base style colors //
 
 $border-color: $wild-dove;
-
+$icon-non-active: $spun-pearl;
+$font-main-color: $cod-grey;
+$main-color: $ship-cove;
+$nav-color: $mulled-wine;
+$main-color-lighter: $ship-cove-lighter;
 
 
 // main styles //
@@ -16,28 +27,38 @@ body {
     margin: 0;
 }
 
+h2, 
+h3, 
+h5, 
+p,
+li,
+select,
+button {
+    color: $font-main-color;
+}
+
 a {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-  }
-  
-  a:hover {
-    color: rgb(0, 255, 242);
-  }
-  
-  .next {
-    color: white;
-  }
+}
 
-  .traffic,
-  .daily,
-  .mobile,
-  .s-media-container,
-  .members,
-  .activity,
-  .message,
-  .settings {
+a:hover {
+color: rgb(0, 255, 242);
+}
+
+.next {
+color: white;
+}
+
+.traffic,
+.daily,
+.mobile,
+.s-media-container,
+.members,
+.activity,
+.message,
+.settings {
     padding: 20px;
     border-top: 1px solid $wild-dove;
 }
@@ -61,7 +82,7 @@ header {
 
 nav {
     grid-area: navigation;
-    background-color: lightblue;
+    background-color: $nav-color;
 }
 
 main {
@@ -82,7 +103,7 @@ main {
 }
 
 #bellIcon path{
-    fill: black;
+    fill: $cod-grey;
 }
 
 .profile-img {
@@ -95,7 +116,7 @@ main {
 header {
     display: flex;
     flex-direction: row;
-    background-color: rgb(118, 120, 221);
+    background-color: $main-color;
 }
 
 header h5 {
@@ -116,16 +137,9 @@ header h5 {
 #header-vertical-line{ 
     margin: 0 10px;
     transform: rotate(90deg);
-    color: black;
+    color: $cod-grey;
     height: 0;
     width: 20%;
-}
-
-
-// alert banner 
-
-.alert {
-    height: 4em;
 }
 
 //nav icons 
@@ -137,7 +151,7 @@ header h5 {
 
 
 .navIcon path{
-    fill: $black;
+    fill: $icon-non-active;
 }
 
 // navigation styles
@@ -204,18 +218,24 @@ header h5 {
     flex-direction: row;
     padding: 5em 0;
     margin: auto;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 #social-1, 
 #social-2,
 #social-3 {
     display: flex;
+    flex-grow: 1;
     border: 1px solid $wild-dove;
+    padding: 8px
 }
 
 .media-logo {
     margin: 14px 4px 0 4px;
+}
+
+.media-logo path{
+    fill: $main-color-lighter;
 }
 
 // message & settings 
@@ -297,9 +317,6 @@ header h5 {
         border-right: none;
     }
 
-    .social {
-        justify-content: space-around;
-    }
     .s-media-container {
         border-top: none;
     }
@@ -308,6 +325,7 @@ header h5 {
     #social-2,
     #social-3 {
         padding: 5px;
+        max-width: 300px;
     }
     
     .profile-image {
@@ -325,7 +343,7 @@ header h5 {
     }
     
     .members-text a {
-        color: black;
+        color: $cod-grey;
         padding: 0;
     }
 
@@ -346,7 +364,7 @@ header h5 {
     }
 
     .next {
-        color: black;
+        color: $cod-grey;
         font-size: 40px;
     }
 
