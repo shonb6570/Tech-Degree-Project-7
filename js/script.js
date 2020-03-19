@@ -1,5 +1,5 @@
 // Alert banner variables
-const alertBanner = document.getElementById('alert');
+const alertBanner = document.getElementById('alert-banner');
 // Chart variables
 let trafficCanvas = document.getElementById('traffic-chart');
 let dailyCanvas = document.getElementById('daily-chart');
@@ -12,18 +12,15 @@ let mobileCanvas = document.getElementById('mobile-graph');
 //create html for banner
 
 alertBanner.innerHTML =
-    `<div class="alert-banner">
+    `<div id="alert-banner">
         <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks left to complete</p>
         <p class="alert-banner-close">x</p>
     </div>`;
 
-alertBanner.style.backgroundColor = "#7477BF";
-
-
 alertBanner.addEventListener('click', e => {
     const element = e.target;
     if(element.classList.contains("alert-banner-close")) {
-        alert.style.display = "none"
+        alertBanner.style.display = "none"
     }
 });
 
