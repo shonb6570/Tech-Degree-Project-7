@@ -9,13 +9,12 @@ p,
 li,
 select,
 button {
-  color: #666666;
+  color: #3a3a3a;
 }
 
 a {
   text-decoration: none;
   display: inline-block;
-  padding: 8px 16px;
 }
 
 a:hover {
@@ -26,7 +25,6 @@ a:hover {
   color: white;
 }
 
-.traffic,
 .daily,
 .mobile,
 .s-media-container,
@@ -63,15 +61,6 @@ main {
   width: 85vw;
 }
 
-#bellIcon {
-  height: 25px;
-  width: 25px;
-}
-
-#bellIcon path {
-  fill: #666666;
-}
-
 .profile-img {
   height: 35px;
   width: 35px;
@@ -89,10 +78,21 @@ header h5 {
   margin-left: 10px;
 }
 
-.bell-icon {
-  display: flex;
-  margin-left: auto;
-  align-items: center;
+#header-vertical-line {
+  margin: 0 10px;
+  transform: rotate(90deg);
+  color: #3a3a3a;
+  height: 0;
+  width: 20%;
+}
+
+#bellIcon {
+  height: 25px;
+  width: 25px;
+}
+
+#bellIcon path {
+  fill: #3a3a3a;
 }
 
 .bell-icon h3 {
@@ -100,16 +100,74 @@ header h5 {
   margin: 0 20px 0 5px;
 }
 
-#header-vertical-line {
-  margin: 0 10px;
-  transform: rotate(90deg);
-  color: #666666;
-  height: 0;
-  width: 20%;
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#bellIcon:hover path {
+  fill: white;
+  transition: 0.5s;
+}
+
+.bell-icon {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  font-size: 14px;
+  background-color: #f1f1f1;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content p {
+  padding-bottom: 4px;
+}
+
+.dropdown-content p:nth-child(2),
+.dropdown-content p:nth-child(3) {
+  padding-top: 15px;
+  border-top: 1px solid #3a3a3a;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 .alert-banner {
   background-color: #7477BF;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  position: relative;
+}
+
+.alert-banner p:nth-child(2) {
+  cursor: pointer;
+  position: absolute;
+  top: 3.5px;
+  right: 10px;
+}
+
+nav a {
+  padding: 12px 12px;
+}
+
+nav a:nth-child(1) {
+  margin-left: 10px;
 }
 
 .navIcon {
@@ -148,6 +206,10 @@ header h5 {
   border-right: none;
   border-radius: 10px 0 0 10px;
   font-size: 14px;
+}
+
+.traffic {
+  padding: 20px;
 }
 
 .traffic-header {
@@ -197,6 +259,57 @@ header h5 {
   fill: #7377BF;
 }
 
+.profile-image {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.members-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.members-text a {
+  color: #3a3a3a;
+  padding: 0;
+}
+
+.members-text h3 {
+  margin: 0;
+}
+
+.members-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #8a8a8a;
+  margin-top: 20px;
+}
+
+.members-container p {
+  margin: auto 0;
+}
+
+.next {
+  color: #3a3a3a;
+  font-size: 40px;
+}
+
+.next:hover, .members-text a:hover {
+  color: aqua;
+  transition: 0.5s;
+}
+
+.members,
+.message {
+  padding-top: 5px;
+  padding-left: 20px;
+}
+
 #userField, #messageField, #timezone, .button-primary, #cancel {
   width: 100%;
   padding: 1em 0;
@@ -210,21 +323,6 @@ header h5 {
   flex-direction: column;
 }
 
-@media (max-width: 767px) {
-  .members-container, .activity-container, .widget-container, .form-field, .settings-button {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    margin: 0 auto;
-    max-width: 500px;
-  }
-
-  .profile-image {
-    height: 200px;
-    width: 200px;
-    margin: 0 auto;
-  }
-}
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: 55px 1fr;
@@ -257,6 +355,11 @@ header h5 {
     width: 45vw;
   }
 
+  nav a:nth-child(1) {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
   .main-header-search input {
     margin: 0.25em 1em 1em auto;
     border: 1px solid #8a8a8a;
@@ -286,57 +389,6 @@ header h5 {
 #social-3 {
     padding: 5px;
     max-width: 300px;
-  }
-
-  .profile-image {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    margin-right: 8px;
-  }
-
-  .members-text {
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
-    justify-content: center;
-  }
-
-  .members-text a {
-    color: #666666;
-    padding: 0;
-  }
-
-  .members-text h3 {
-    margin: 0;
-  }
-
-  .members-container {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #8a8a8a;
-    margin-top: 20px;
-  }
-
-  .members-container p {
-    margin: auto 0;
-  }
-
-  .next {
-    color: #666666;
-    font-size: 40px;
-  }
-
-  .next:hover, .members-text a:hover {
-    color: aqua;
-    transition: 0.5s;
-  }
-
-  .members,
-.message {
-    padding-top: 5px;
-    padding-left: 20px;
   }
 
   .activity,

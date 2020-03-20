@@ -1,22 +1,48 @@
-// Alert banner variables
-const alertBanner = document.getElementById('alert-banner');
-// Chart variables
+// <--------          Variables           ---------> //
+
+const alertBanner = document.getElementById('alert');
+
 let trafficCanvas = document.getElementById('traffic-chart');
 let dailyCanvas = document.getElementById('daily-chart');
 let mobileCanvas = document.getElementById('mobile-graph');
 
+const dropDown = document.getElementById("myDropdown");
+
+// <--------          Drop-down messages               ---------> //
+
+/* toggle content */
+
+// dropDown.addEventListener('click', e => {
+//     const element = e.target;
+//     if(element.classList.contains("hidden")){
+//         dropDown.classList.remove("show");
+//     }
+//     if( element.classList.contains("dropbtn") ) {
+//         dropDown.classList.toggle("show");
+//     }
+// });
+
+// Close the dropdown menu if the user clicks outside of it
 
 
-//Alert banner //
+// window.addEventListener('click', e => {
+//     const element = e.target;
+//     if( !element.classList.contains("dropbtn") ) {
+//         dropDown.classList.add("hidden");
+//     }
+// });
+  
+
+// <--------          Alert banner                     ---------> //
 
 //create html for banner
-
 alertBanner.innerHTML =
-    `<div id="alert-banner">
+    `<div class="alert-banner">
         <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks left to complete</p>
         <p class="alert-banner-close">x</p>
     </div>`;
 
+//click function to close message
 alertBanner.addEventListener('click', e => {
     const element = e.target;
     if(element.classList.contains("alert-banner-close")) {
@@ -24,7 +50,8 @@ alertBanner.addEventListener('click', e => {
     }
 });
 
-//  Line chart
+// <--------          Line chart                       ---------> //
+
 let trafficData = {
     labels: [ "16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31" ],
     datasets: [
@@ -60,6 +87,7 @@ let trafficChart = new Chart(trafficCanvas, {
     options: trafficOptions
 });
 
-
+// <--------          Bar graph                        ---------> //
+// <--------          Donut chart                      ---------> //
 
 
