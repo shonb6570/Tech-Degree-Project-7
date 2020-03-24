@@ -65,7 +65,7 @@ main {
   height: 35px;
   width: 35px;
   border-radius: 50% 50%;
-  margin-left: 40px;
+  margin: auto 10px auto 20px;
 }
 
 header {
@@ -74,8 +74,12 @@ header {
   background-color: #7477BF;
 }
 
+header h3 {
+  padding-right: 10px;
+}
+
 header h5 {
-  margin-left: 10px;
+  padding-left: 10px;
 }
 
 #header-vertical-line {
@@ -116,7 +120,8 @@ header h5 {
   display: inline-block;
   margin-left: auto;
   padding-top: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  border-right: 1px solid #8a8a8a;
 }
 
 .dropdown-content {
@@ -124,7 +129,7 @@ header h5 {
   position: absolute;
   font-size: 14px;
   background-color: #f1f1f1;
-  min-width: 250px;
+  min-width: 212px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -133,14 +138,30 @@ header h5 {
   padding-bottom: 4px;
 }
 
-.dropdown-content p:nth-child(2),
-.dropdown-content p:nth-child(3) {
+.dropdown-content p:nth-of-type(2),
+.dropdown-content p:nth-of-type(3) {
   padding-top: 15px;
   border-top: 1px solid #3a3a3a;
 }
 
+.close {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.two {
+  top: 65px;
+}
+
+.three {
+  top: 115px;
+}
+
 .show {
   display: block;
+  border-radius: 5px;
+  padding: 0 8px 8px;
 }
 
 .hidden {
@@ -352,7 +373,8 @@ nav a:nth-child(1) {
   }
 
   .widget-container-half {
-    width: 45vw;
+    width: 40vw;
+    padding-left: 15px;
   }
 
   nav a:nth-child(1) {
@@ -366,9 +388,15 @@ nav a:nth-child(1) {
     border-radius: 10px;
   }
 
-  .daily, .mobile {
+  .daily,
+.mobile {
     border: 1px solid #8a8a8a;
-    padding: 5px 0px;
+    padding: 10px 5px 20px;
+  }
+
+  .daily h3,
+.mobile h3 {
+    padding-left: 20px;
   }
 
   .daily {
