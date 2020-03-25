@@ -333,11 +333,15 @@ nav a:nth-child(1) {
   fill: #7377BF;
 }
 
-#twitterBird {
+#circle {
+  fill: #7377BF;
+}
+
+.logo-center {
   fill: #FFF;
 }
 
-#twitterShadow {
+.logo-shadow {
   fill: #3a3a3a;
   opacity: 0.5;
 }

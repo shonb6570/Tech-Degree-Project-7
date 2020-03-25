@@ -391,15 +391,16 @@ nav a:nth-child(1) {
     margin-left: 50%
 }
 
-.media-logo circle {
-    fill: $main-color-lighter;
+.media-logo circle,
+.circle {
+    fill: $main-color-lighter !important;
 }
 
-#twitterBird {
+.logo-center {
     fill: $white;
 }
 
-#twitterShadow {
+.logo-shadow {
     fill: $font-main-color;
     opacity: 0.5;
 }
