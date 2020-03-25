@@ -15,7 +15,7 @@ const trafficDataWeekly = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 
 const trafficDataMonthly = [5000, 6350, 8100, 8400, 8004, 7100];
 
 const trafficHourlyLabel = ["10AM", "11AM", "12AM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM" ];
-const trafficDailyLabel = [ "M", "T", "W", "TH", "F", "S", "SU"];
+const trafficDailyLabel = [ "3/1", "3/2", "3/3", "3/4", "3/5", "3/6", "3/7", "3/8", "3/9", "3/10", "3/11", "3/12", "3/13", "3/14"];
 const trafficWeeklyLabel = [ "16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31" ];
 const trafficMonthlyLabel = ["MAR", "APR", "MAY", "JUN", "JUL", "AUG"];
 
@@ -24,13 +24,16 @@ const dailyBtn = document.getElementById('daily');
 const weeklyBtn = document.getElementById('weekly');
 const monthlyBtn = document.getElementById('monthly');
 
+const trafficBtnDiv = document.querySelector(".traffic-header");
+const trafficBtns = trafficBtnDiv.getElementsByClassName("btn");
+
 let dataPeriod = trafficDataWeekly;
 let dataLabel = trafficWeeklyLabel;
 
     // drop-down selectors
 const dropDown = document.getElementById("myDropdown");
 const bellIcon = document.getElementById("bellIcon");
-const closeBtn = document.querySelectorAll("close-content");
+const closeBtn = document.querySelectorAll(".close-content");
 
 
 // <--------          Drop-down messages               ---------> //
@@ -154,11 +157,23 @@ const trafficChart = new Chart(trafficCanvas, {
     });
 
 
+    //highlight button function for traffic chart 
+
+    // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < trafficBtns.length; i++) {
+            trafficBtns[i].addEventListener("click", function() {
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
 
 
 function updateChart() {
     chart = trafficChart;
     chart.data.datasets[0].data = dataPeriod;
+    chart.data.labels = dataLabel;
     chart.update();
 };
 
@@ -166,7 +181,7 @@ function updateChart() {
 
 
 const dailyData = {
-    labels:  ["S", "M", "T", "W", "TH", "F", "S"],
+    labels:  ["SU", "M", "T", "W", "TH", "F", "S"],
     datasets: [
         {
         label: '# of Hits',

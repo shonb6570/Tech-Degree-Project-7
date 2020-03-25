@@ -1,6 +1,7 @@
 //  Descriptive colors    //@extend
 $cod-grey:          #3a3a3a;
 $white:             #FFF;
+$gallery:           #ECECEC;
 $wild-dove:         #8a8a8a;
 $ship-cove:         #7477BF;
 $mulled-wine:       #4D4C72;
@@ -8,16 +9,21 @@ $spun-pearl:        #A6A6B9;
 $de-york:           #81C98F;
 $wistful:           #ACADD7;
 $glacier:           #73B1BF;
-$ship-cove-lighter: #7377BF;
+$ship-cove-light:   #7377BF;
+$spindle:           #c1c3f0;
 
 // Base style colors //
 
+$button-hover: $de-york;
 $border-color: $wild-dove;
+$border-color-dark: rgba(59, 59, 59, .65);
 $icon-non-active: $spun-pearl;
+$icon-hover: $gallery;
+$link-hover: $spindle;
 $font-main-color: $cod-grey;
 $main-color: $ship-cove;
 $nav-color: $mulled-wine;
-$main-color-lighter: $ship-cove-lighter;
+$main-color-lighter: $ship-cove-light;
 
 
 // main styles //
@@ -41,8 +47,8 @@ a {
     display: inline-block;
 }
 
-a:hover {
-color: rgb(0, 255, 242);
+a:focus, select, button:focus, .button.alt:focus, input:focus, textarea:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, input[type="search"]:focus {
+    outline-color: $link-hover;
 }
 
 .next {
@@ -58,6 +64,12 @@ color: white;
 .settings {
     padding: 20px;
     border-top: 1px solid $wild-dove;
+}
+
+button {
+    border-width: none;
+    border-style: none;
+    border-color: none;
 }
 
 //   Grid   //
@@ -98,6 +110,7 @@ main {
 .profile-img {
     height: 35px;
     width:  35px;
+    border: solid .25px $border-color-dark;
     border-radius: 50% 50%;
     margin: auto 10px auto 20px;
 }
@@ -148,9 +161,33 @@ header h5 {
     cursor: pointer;
 }
 
-  #bellIcon:hover path{
-    fill: white;
-    transition: .5s;
+.navIcon:hover path,
+#bellIcon:hover path {
+  fill: $icon-hover;
+  transition: .5s;
+}
+
+header h5:hover,
+header h3:hover {
+color: $icon-hover;
+transition: .5s;
+}
+
+.members-text a:hover,
+.next:hover, 
+a:hover {
+color: $link-hover;
+transition: .5s;
+}
+
+.btn:hover {
+color: $button-hover;
+transition: .5s;
+}
+
+.dropbtn:focus,
+.btn:focus {
+    outline: none;
 }
 
 //dropdown element
@@ -184,7 +221,7 @@ header h5 {
     border-top: 1px solid $font-main-color;
 }
 
-.close {
+.close-content {
     position: absolute;
     top: 15px;
 	right: 10px;
@@ -309,31 +346,62 @@ nav a:nth-child(1) {
     border-radius: 20px;
 }
 
+.active:hover {
+  color: inherit;
+}
+
 // social media div styles
 
 .social {
     display: flex;
-    flex-direction: row;
-    padding: 5em 0;
+    flex-direction: column;
     margin: auto;
     justify-content: space-evenly;
+}
+
+.social-text {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.social-text p {
+    flex-grow: 1;
+    font-size: 22px;
+    padding: 0 10px;
 }
 
 #social-1, 
 #social-2,
 #social-3 {
     display: flex;
-    flex-grow: 1;
-    border: 1px solid $wild-dove;
-    padding: 8px
+    width: 80vw;
+    padding: 8px 5px 30px 5px;
+    margin: 10px auto;
+}
+
+#social-1, 
+#social-2 {
+    border-bottom: 1px solid $wild-dove;
 }
 
 .media-logo {
-    margin: 14px 4px 0 4px;
+    height: 100px; 
+    width: 100px;
+    margin-left: 50%
 }
 
-.media-logo path{
+.media-logo circle {
     fill: $main-color-lighter;
+}
+
+#twitterBird {
+    fill: $white;
+}
+
+#twitterShadow {
+    fill: $font-main-color;
+    opacity: 0.5;
 }
 
 //members & activity 
@@ -344,13 +412,15 @@ nav a:nth-child(1) {
     width: 80px;
     border-radius: 50%;
     margin-right: 8px;
+    padding: 2px;
+    border: solid 1px $border-color-dark;
 }
 
 .members-text {
     display: flex;
     flex-direction: column;
-    margin-right: auto;
     justify-content: center;
+    margin: auto auto auto 0;
 }
 
 .members-text a {
@@ -370,6 +440,9 @@ nav a:nth-child(1) {
     margin-top: 20px;
 }
 
+.members-container a {
+    margin: auto 0;
+}
 .members-container p {
     margin: auto 0;
 }
@@ -377,11 +450,6 @@ nav a:nth-child(1) {
 .next {
     color: $cod-grey;
     font-size: 40px;
-}
-
-.next:hover, .members-text a:hover {
-    color: rgb(0, 255, 255);
-    transition: .5s;
 }
 
 .members,
@@ -441,6 +509,10 @@ nav a:nth-child(1) {
         margin-top: 10px;
     }
 
+    .main-header-search {
+        padding-top: 7px;
+    }
+
     .main-header-search input{
         margin: .25em 1em 1em auto;
         border: 1px solid $wild-dove;
@@ -469,11 +541,28 @@ nav a:nth-child(1) {
         border-top: none;
     }
     
+    .social {
+        display: flex;
+        flex-direction: row;
+        padding: 5em 0;
+        margin: auto;
+        justify-content: space-evenly;
+    }
+
     #social-1, 
     #social-2,
     #social-3 {
-        padding: 5px;
+        display: flex;
+        flex-grow: 1;
+        border: 1px solid $wild-dove;
+        padding: 8px;
         max-width: 300px;
+    }
+
+    .media-logo {
+        height: 100px; 
+        width: 100px;
+        margin-left: 0;
     }
     
     .activity,
