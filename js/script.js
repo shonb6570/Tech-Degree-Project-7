@@ -36,7 +36,7 @@ const bellIcon = document.getElementById("bellIcon");
 const closeBtn = document.querySelectorAll(".close-content");
 
     //messaging selectors 
-const user = document.getElementById("userField");
+const user = document.getElementById("autoComplete");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
