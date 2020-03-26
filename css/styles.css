@@ -17,8 +17,22 @@ a {
   display: inline-block;
 }
 
-a:focus, select, button:focus, .button.alt:focus, input:focus, textarea:focus, input[type=button]:focus, input[type=reset]:focus, input[type=submit]:focus, input[type=search]:focus {
+a:focus,
+select,
+button:focus,
+.button.alt:focus,
+input:focus,
+textarea:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+input[type=submit]:focus,
+input[type=search]:focus {
   outline-color: #c1c3f0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  padding-left: 10px;
 }
 
 .next {
@@ -27,7 +41,6 @@ a:focus, select, button:focus, .button.alt:focus, input:focus, textarea:focus, i
 
 .daily,
 .mobile,
-.s-media-container,
 .members,
 .activity,
 .message,
@@ -36,10 +49,9 @@ a:focus, select, button:focus, .button.alt:focus, input:focus, textarea:focus, i
   border-top: 1px solid #8a8a8a;
 }
 
-button {
-  border-width: none;
-  border-style: none;
-  border-color: none;
+li button {
+  border: none;
+  background-color: transparent;
 }
 
 .grid-container {
@@ -82,11 +94,11 @@ header {
 }
 
 header h3 {
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 header h5 {
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 #header-vertical-line {
@@ -201,7 +213,7 @@ a:hover {
 
 .alert-banner {
   background-color: #7477BF;
-  padding: 5px 10px;
+  padding: 5px 0 5px 15px;
   border-radius: 5px;
   color: white;
   position: relative;
@@ -211,15 +223,11 @@ a:hover {
   cursor: pointer;
   position: absolute;
   top: 3.5px;
-  right: 10px;
+  right: 15px;
 }
 
 nav a {
   padding: 12px 12px;
-}
-
-nav a:nth-child(1) {
-  margin-left: 10px;
 }
 
 .navIcon {
@@ -290,6 +298,10 @@ nav a:nth-child(1) {
   color: inherit;
 }
 
+.s-media-container {
+  border-top: 1px solid #8a8a8a;
+}
+
 .social {
   display: flex;
   flex-direction: column;
@@ -298,24 +310,33 @@ nav a:nth-child(1) {
 }
 
 .social-text {
-  display: flex;
+  display: column;
   flex-direction: row;
   margin: auto;
 }
 
 .social-text p {
   flex-grow: 1;
-  font-size: 22px;
-  padding: 0 10px;
+  margin: 0;
+}
+
+.social-text p:nth-of-type(1) {
+  color: #7477BF;
+  font-size: 20px;
+}
+
+.social-text p:nth-of-type(2) {
+  color: #3a3a3a;
+  font-size: 42px;
 }
 
 #social-1,
 #social-2,
 #social-3 {
   display: flex;
-  width: 80vw;
+  width: 100vw;
   padding: 8px 5px 30px 5px;
-  margin: 10px auto;
+  margin: 10px 0;
 }
 
 #social-1,
@@ -324,17 +345,14 @@ nav a:nth-child(1) {
 }
 
 .media-logo {
-  height: 100px;
-  width: 100px;
-  margin-left: 50%;
+  height: 125px;
+  width: 125px;
+  margin-left: 25%;
 }
 
-.media-logo circle {
-  fill: #7377BF;
-}
-
-#circle {
-  fill: #7377BF;
+.media-logo circle,
+.circle {
+  fill: #7377BF !important;
 }
 
 .logo-center {
@@ -367,8 +385,8 @@ nav a:nth-child(1) {
   padding: 0;
 }
 
-.members-text h3 {
-  margin: 0;
+.members-text h4 {
+  margin: 4px 0;
 }
 
 .members-container {
@@ -377,6 +395,10 @@ nav a:nth-child(1) {
   padding-bottom: 20px;
   border-bottom: 1px solid #8a8a8a;
   margin-top: 20px;
+}
+
+.members-container:nth-of-type(4) {
+  border-bottom: none;
 }
 
 .members-container a {
@@ -398,12 +420,24 @@ nav a:nth-child(1) {
   padding-left: 20px;
 }
 
-#userField, #messageField, #timezone, .button-primary, #cancel {
+#userField,
+#messageField,
+#timezone,
+.button-primary,
+#cancel {
   width: 100%;
   padding: 1em 0;
   margin-top: 0.5em;
   border: 1px solid #8a8a8a;
   border-radius: 5px;
+}
+
+.button-primary {
+  background-color: #81C98F;
+}
+
+#cancel {
+  background-color: #ACADD7;
 }
 
 .settings, .message {
@@ -444,9 +478,12 @@ nav a:nth-child(1) {
     padding-left: 15px;
   }
 
+  nav a {
+    margin-left: 2px;
+  }
+
   nav a:nth-child(1) {
-    margin-left: 0;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   .main-header-search {

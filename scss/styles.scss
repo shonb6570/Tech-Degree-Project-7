@@ -47,8 +47,22 @@ a {
     display: inline-block;
 }
 
-a:focus, select, button:focus, .button.alt:focus, input:focus, textarea:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, input[type="search"]:focus {
+a:focus, 
+select, 
+button:focus, 
+.button.alt:focus, 
+input:focus, 
+textarea:focus, 
+input[type="button"]:focus, 
+input[type="reset"]:focus, 
+input[type="submit"]:focus, 
+input[type="search"]:focus {
     outline-color: $link-hover;
+}
+
+input::placeholder,
+textarea::placeholder {
+ padding-left: 10px;
 }
 
 .next {
@@ -57,7 +71,6 @@ color: white;
 
 .daily,
 .mobile,
-.s-media-container,
 .members,
 .activity,
 .message,
@@ -66,10 +79,9 @@ color: white;
     border-top: 1px solid $wild-dove;
 }
 
-button {
-    border-width: none;
-    border-style: none;
-    border-color: none;
+li button {
+    border: none;
+    background-color: transparent;
 }
 
 //   Grid   //
@@ -122,11 +134,11 @@ header {
 }
 
 header h3 {
-    padding-right: 10px; 
+    padding-right: 15px; 
 }
 
 header h5 {
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 #header-vertical-line{ 
@@ -251,7 +263,7 @@ transition: .5s;
 
 .alert-banner {
     background-color: $main-color;
-    padding: 5px 10px;
+    padding: 5px 0 5px 15px;
 	border-radius: 5px;
 	color: white;
 	position: relative;
@@ -261,7 +273,7 @@ transition: .5s;
 	cursor: pointer;
 	position: absolute;
 	top: 3.5px;
-	right: 10px;
+	right: 15px;
 }
 
 
@@ -271,9 +283,6 @@ nav a {
     padding: 12px 12px;
 }
 
-nav a:nth-child(1) {
-    margin-left: 10px;
-}
 
 .navIcon {
     height: 25px;
@@ -351,7 +360,9 @@ nav a:nth-child(1) {
 }
 
 // social media div styles
-
+.s-media-container {
+    border-top: 1px solid $wild-dove;
+}
 .social {
     display: flex;
     flex-direction: column;
@@ -360,24 +371,32 @@ nav a:nth-child(1) {
 }
 
 .social-text {
-    display: flex;
+    display: column;
     flex-direction: row;
     margin: auto;
 }
 
 .social-text p {
     flex-grow: 1;
-    font-size: 22px;
-    padding: 0 10px;
+    margin: 0;
+}
+
+.social-text p:nth-of-type(1) {
+    color: $ship-cove;
+    font-size: 20px;
+}
+.social-text p:nth-of-type(2) {
+    color: $font-main-color;
+    font-size: 42px;
 }
 
 #social-1, 
 #social-2,
 #social-3 {
     display: flex;
-    width: 80vw;
+    width: 100vw;
     padding: 8px 5px 30px 5px;
-    margin: 10px auto;
+    margin: 10px 0;
 }
 
 #social-1, 
@@ -386,9 +405,9 @@ nav a:nth-child(1) {
 }
 
 .media-logo {
-    height: 100px; 
-    width: 100px;
-    margin-left: 50%
+    height: 125px; 
+    width: 125px;
+    margin-left: 25%;
 }
 
 .media-logo circle,
@@ -429,8 +448,8 @@ nav a:nth-child(1) {
     padding: 0;
 }
 
-.members-text h3 {
-    margin: 0;
+.members-text h4 {
+    margin: 4px 0;
 }
 
 .members-container {
@@ -439,6 +458,10 @@ nav a:nth-child(1) {
     padding-bottom: 20px;
     border-bottom: 1px solid $wild-dove;
     margin-top: 20px;
+}
+
+.members-container:nth-of-type(4) {
+    border-bottom: none;
 }
 
 .members-container a {
@@ -462,12 +485,24 @@ nav a:nth-child(1) {
 
 // message & settings 
 
-#userField, #messageField, #timezone, .button-primary, #cancel {
+#userField, 
+#messageField, 
+#timezone, 
+.button-primary, 
+#cancel {
     width: 100%;
     padding: 1em 0;
     margin-top: .5em;
     border: 1px solid $wild-dove;
     border-radius: 5px;
+}
+
+.button-primary {
+    background-color: $de-york;
+}
+
+#cancel{
+    background-color: $wistful;
 }
 
 .settings, .message {
@@ -505,9 +540,12 @@ nav a:nth-child(1) {
         padding-left: 15px;
     }
 
+    nav a {
+        margin-left: 2px;
+    }
+
     nav a:nth-child(1) {
-        margin-left: 0;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .main-header-search {
