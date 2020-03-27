@@ -26,6 +26,7 @@ $nav-color: $mulled-wine;
 $main-color-lighter: $ship-cove-light;
 $slider-on: $de-york;
 $slider-off: $mulled-wine;
+$alert-bell-unread: $de-york;
 
 
 // main styles //
@@ -159,6 +160,17 @@ header h5 {
 #bellIcon {
     height: 25px;
     width:  25px;
+}
+
+#unread {
+    width: 9px;
+    height: 9px;
+    border: solid .25px $alert-bell-unread;
+    border-radius: 50% 50%;
+    background-color: $alert-bell-unread;
+    position: absolute;
+    bottom: 35px;
+    left: 20px;
 }
 
 #bellIcon path{
