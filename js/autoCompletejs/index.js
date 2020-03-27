@@ -1,15 +1,15 @@
 document.querySelector("#autoComplete").addEventListener("autoComplete", function (event) {
   console.log(event.detail);
 });
-​
+
 const membersText = document.querySelectorAll('.members .members-container .members-text p');
-​
+
 let members = [];
-​
+
 membersText.forEach(memberText => {
   members.push(memberText.textContent.toLowerCase());
 });
-​
+
 const autoCompletejs = new autoComplete({
   data: { 
     src: members,
@@ -22,5 +22,13 @@ const autoCompletejs = new autoComplete({
     destination: document.querySelector("#autoComplete"),
     position: "afterend",
     element: "ul"
+  },
+  maxResults: 5,   
+  highlight: true, 
+  resultItem: {    
+      content: (data, source) => {
+          source.innerHTML = data.match;
+      },
+      element: "li"
   },
 });
