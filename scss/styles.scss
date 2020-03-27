@@ -117,7 +117,7 @@ main {
 }
 
 .widget-container-full, .widget-container-half {
-    width: 85vw;
+    width: 85%;
 }
 
 
@@ -399,7 +399,6 @@ nav a {
 }
 
 .social-text p {
-    flex-grow: 1;
     margin: 0;
 }
 
@@ -416,7 +415,7 @@ nav a {
 #social-2,
 #social-3 {
     display: flex;
-    width: 100vw;
+    width: 100%;
     padding: 8px 5px 30px 5px;
     margin: 10px 0;
 }
@@ -648,10 +647,9 @@ nav a {
         grid-column: 2 / span 1;
     }
     .widget-container-full {
-        width: 90vw;
+        width: 90%;
     }
     .widget-container-half {
-        width: 40vw;
         padding-left: 15px;
     }
 
@@ -707,7 +705,6 @@ nav a {
     #social-2,
     #social-3 {
         display: flex;
-        flex-grow: 1;
         border: 1px solid $wild-dove;
         padding: 8px;
         max-width: 300px;
@@ -759,39 +756,41 @@ nav a {
     .traffic {
         display: flex;
         flex-direction: column;
-        width: 70vw;
+        width: 70%;
         margin: 0 auto;
     }
     .widget-container-full {
         margin: 0 auto;
-        width: 50vw;
     }
 
     .widget-container-half {
-        width: 35vw;
         padding: 0;
     }
 
     .daily{
-        padding: 0 0 15px 0;
+        padding: 0 0 15px 40px;
         margin-left: auto;
-        width: 37.5vw;
+        width: 75%;
         border-right: none;
     }
 
     .mobile{
         padding: 0 0 15px 0;
         margin-right: auto;
-        width: 37.5vw;
+        width: 75%;
     }
 
     .social {
-        width: 70vw;
+        width: 70%;
+    }
+
+    .s-media-container h3 {
+        padding-left: 14.2%;
     }
     
     .members,
     .message {
-        margin: 0 auto 0 20%;
+        margin-left: 25%;
     }
 
     .activity {
@@ -800,13 +799,14 @@ nav a {
 
     .activity,
     .settings, {
-        margin: 0 20% 0 auto;
+        margin-right: 25%;
+    }
+
+    .members,
+    .message 
+    .activity,
+    .settings, {
+        padding: 0 15px;
     }
     
-    .members,
-    .activity,
-    .settings,
-    .message {
-        width: 35vw;
-    }
 }
