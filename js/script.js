@@ -11,7 +11,7 @@ let mobileCanvas = document.getElementById('mobile-graph');
     // traffic chart data, label data & selectors
 const trafficDataHourly = [8, 7, 5, 8, 10, 14, 18, 24, 34, 36, 28, 22, 18, 9];
 const trafficDataDaily = [110, 140, 129, 200, 180, 217, 256, 209, 280, 290, 314, 300, 380, 340];
-const trafficDataWeekly = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
+const trafficDataWeekly = [ 750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
 const trafficDataMonthly = [5000, 6350, 8100, 8400, 8004, 7100];
 
 const trafficHourlyLabel = ["10AM", "11AM", "12AM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM" ];
@@ -89,6 +89,14 @@ const trafficData = {
     datasets: [
         {
         data: trafficDataWeekly,
+        pointBackgroundColor: 'rgba(255, 255, 255,1)',
+        pointBorderColor: 'rgba(116, 119, 191,1)',
+        pointBorderWidth: 3,
+        pointRadius: 5,
+        pointHoverRadius: 10,
+        pointHoverBorderColor: 'rgba(129, 201, 143,1)',
+        pointHoverBorderWidth: 2,
+        borderWidth: 1,
         backgroundColor: 'rgba(116,119,191,.3)',
         borderWidth: 1,
         },
@@ -98,6 +106,11 @@ const trafficData = {
 //options
 const trafficOptions = {
     aspectRatio: 2.5,
+    elements: {
+        line: {
+          tension: 0,
+        }
+      },
     animation: {
         duration: 1000,
         easing: 'easeInOutCubic'
@@ -105,14 +118,17 @@ const trafficOptions = {
     scales: {
         xAxes: [{
             gridLines: {
-                offsetGridLines: true
+                offsetGridLines: true,
+                beginAtZero: true
             },
-            offset: true,                   
+            offset: false,                   
         }],
         yAxes: [{
             gridLines: {
-                offsetGridLines: true
+                offsetGridLines: true,
+                beginAtZero: false
             },
+            offset: false,
             ticks: {
                 stepSize: 500,
             }
