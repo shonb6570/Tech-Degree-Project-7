@@ -380,6 +380,11 @@ nav a {
 .s-media-container {
     border-top: 1px solid $wild-dove;
 }
+
+.s-media-container h3 {
+    padding-left: 25px;
+}
+
 .social {
     display: flex;
     flex-direction: column;
@@ -526,11 +531,11 @@ nav a {
 }
 
 .button-primary {
-    background-color: $de-york;
+    background-color: $main-color;
 }
 
 #cancel{
-    background-color: $wistful;
+    background-color: $gallery;
 }
 
 .settings, .message {
@@ -693,7 +698,7 @@ nav a {
     .social {
         display: flex;
         flex-direction: row;
-        padding: 5em 0;
+        padding: 1em 0 3em;
         margin: auto;
         justify-content: space-evenly;
     }
@@ -712,6 +717,9 @@ nav a {
         height: 100px; 
         width: 100px;
         margin-left: 0;
+    }
+    .activity {
+        border-left: solid 1px $border-color;
     }
     
     .activity,
@@ -785,6 +793,11 @@ nav a {
     .message {
         margin: 0 auto 0 20%;
     }
+
+    .activity {
+        border-left: none;
+    }
+
     .activity,
     .settings, {
         margin: 0 20% 0 auto;

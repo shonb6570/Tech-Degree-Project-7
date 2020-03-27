@@ -316,6 +316,10 @@ nav a {
   border-top: 1px solid #8a8a8a;
 }
 
+.s-media-container h3 {
+  padding-left: 25px;
+}
+
 .social {
   display: flex;
   flex-direction: column;
@@ -458,11 +462,11 @@ nav a {
 }
 
 .button-primary {
-  background-color: #81C98F;
+  background-color: #7477BF;
 }
 
 #cancel {
-  background-color: #ACADD7;
+  background-color: #ECECEC;
 }
 
 .settings, .message {
@@ -623,7 +627,7 @@ input:checked + .slider:after {
   .social {
     display: flex;
     flex-direction: row;
-    padding: 5em 0;
+    padding: 1em 0 3em;
     margin: auto;
     justify-content: space-evenly;
   }
@@ -642,6 +646,10 @@ input:checked + .slider:after {
     height: 100px;
     width: 100px;
     margin-left: 0;
+  }
+
+  .activity {
+    border-left: solid 1px #8a8a8a;
   }
 
   .activity,
@@ -714,6 +722,10 @@ input:checked + .slider:after {
   .members,
 .message {
     margin: 0 auto 0 20%;
+  }
+
+  .activity {
+    border-left: none;
   }
 
   .activity,
