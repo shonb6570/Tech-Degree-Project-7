@@ -441,6 +441,11 @@ nav a {
   border-radius: 5px;
 }
 
+#messageField::placeholder {
+  padding-top: 8px;
+  padding-left: 5px;
+}
+
 .button-primary {
   background-color: #81C98F;
 }
@@ -642,8 +647,12 @@ input:checked + .slider:after {
     margin-top: auto;
   }
 
+  #send {
+    width: 100%;
+  }
+
   .button-primary {
-    width: 40%;
+    width: 49%;
     margin-right: auto;
   }
 
@@ -653,7 +662,7 @@ input:checked + .slider:after {
   }
 
   #cancel {
-    width: 40%;
+    width: 49%;
   }
 }
 @media (min-width: 1024px) {
