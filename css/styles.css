@@ -62,19 +62,26 @@ li button {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
-  grid-template-areas: "header" "navigation" "main";
+  grid-template-areas: "main";
 }
 
 header {
-  grid-area: header;
+  position: fixed;
+  width: 100%;
+  z-index: 11000;
+  border-bottom: 1px solid rgba(59, 59, 59, 0.65);
 }
 
 nav {
-  grid-area: navigation;
+  margin-top: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
   background-color: #4D4C72;
 }
 
 main {
+  padding-top: 160px;
   grid-area: main;
 }
 
@@ -110,18 +117,6 @@ header h5 {
   color: #3a3a3a;
   height: 0;
   width: 20%;
-}
-
-/* The sticky class is added to the header with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .grid-container {
-  padding-top: 102px;
 }
 
 #bellIcon {
@@ -252,6 +247,16 @@ a:hover {
   right: 15px;
 }
 
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  margin-top: 43px;
+  top: 0;
+  width: 100%;
+  padding-top: 70.4px;
+  z-index: 10000;
+}
+
 nav a {
   padding: 12px 12px;
 }
@@ -267,6 +272,10 @@ nav a {
 
 .headline {
   margin: 15px 15px;
+}
+
+.main {
+  padding-top: 113px;
 }
 
 .main-header {
@@ -585,13 +594,19 @@ input:checked + .slider:after {
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: 55px 1fr;
-    grid-template-areas: "header header" "navigation main";
+    grid-template-areas: "navigation main";
   }
 
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    padding-top: 60px;
+  }
+
+  nav {
+    grid-area: navigation;
+    position: initial;
   }
 
   .main-header, .alert, .traffic, .s-media-container {
@@ -614,12 +629,23 @@ input:checked + .slider:after {
     padding-left: 15px;
   }
 
+  #nav-buttons {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+  }
+
   nav a {
     margin-left: 2px;
   }
 
   nav a:nth-child(1) {
     margin-top: 5px;
+  }
+
+  .sticky {
+    padding-top: 17.2px;
+    width: 94.7%;
   }
 
   .main-header-search {
@@ -630,12 +656,14 @@ input:checked + .slider:after {
     margin: 0.25em 1em 1em auto;
     border: 1px solid #8a8a8a;
     border-radius: 10px;
+    width: 25em;
+    transition: 1.5s ease-in-out;
   }
 
   #traffic-chart {
     max-height: 400px !important;
     max-width: 800px !important;
-    margin: 0 auto;
+    margin-left: 8%;
   }
 
   .daily,
@@ -738,6 +766,10 @@ input:checked + .slider:after {
     margin: 0 auto;
   }
 
+  #traffic-chart {
+    margin: 0 auto;
+  }
+
   .widget-container-full {
     margin: 0 auto;
   }
@@ -806,6 +838,20 @@ input:checked + .slider:after {
   .status,
 .info {
     width: 100%;
+  }
+
+  .main-header-search input {
+    width: 35em;
+    transition: 1.5s ease-in-out;
+  }
+
+  .sticky {
+    width: 96%;
+  }
+}
+@media (min-width: 1400px) {
+  .sticky {
+    width: 96.7%;
   }
 }
 
