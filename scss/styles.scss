@@ -27,6 +27,7 @@ $main-color-lighter: $ship-cove-light;
 $slider-on: $de-york;
 $slider-off: $mulled-wine;
 $alert-bell-unread: $de-york;
+$banner-color: $wistful;
 
 
 // main styles //
@@ -287,8 +288,10 @@ transition: .5s;
 //alert banner 
 
 .alert-banner {
-    background-color: $main-color;
+    background-color: $banner-color;
     padding: 5px 0 5px 15px;
+    border: 1px solid $border-color;
+    border-top: none;
 	border-radius: 5px;
 	color: white;
 	position: relative;

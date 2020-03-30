@@ -2,6 +2,8 @@
 
     //alert banner selectors
 const alertBanner = document.getElementById('alert');
+    //alert scroll function selectors
+const sticky = alertBanner.offsetTop;
 
     //chart/graph selectors
 let trafficCanvas = document.getElementById('traffic-chart');
@@ -39,6 +41,10 @@ const closeBtn = document.querySelectorAll(".close-content");
 const user = document.getElementById("autoComplete");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
+
+    //local storage selectors
+const togBtn1 = document.getElementById("togBtn1");
+const togBtn2 = document.getElementById("togBtn2");
 
 
 // <--------          Drop-down messages               ---------> //
@@ -85,12 +91,9 @@ alertBanner.addEventListener('click', e => {
 // Execute stickyDiv on scroll
 window.onscroll = function() {stickyDiv()};
 
-// Get the offset position of the navbar
-const sticky = alertBanner.offsetTop;
-
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function stickyDiv() {
-  if (window.pageYOffset > sticky) {
+  if (window.pageYOffset > sticky - 60) {
     alertBanner.classList.add("sticky");
   } else {
     alertBanner.classList.remove("sticky");
@@ -305,3 +308,21 @@ send.addEventListener('click', () => {
         alert(`Message successfully sent to: ${user.value}`);
     }
 });
+
+
+// <--------          local storage function                ---------> //
+
+
+function save(){
+    localStorage.setItem('togBtn1', togBtn1.checked);
+}
+
+function load(){    
+    let checked = JSON.parse(localStorage.getItem('togBtn1'));
+    document.getElementById('togBtn1').checked = checked;
+}
+
+function clearSettings(){
+    location.reload();
+    localStorage.clear()
+}

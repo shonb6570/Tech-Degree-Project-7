@@ -233,8 +233,10 @@ a:hover {
 }
 
 .alert-banner {
-  background-color: #7477BF;
+  background-color: #ACADD7;
   padding: 5px 0 5px 15px;
+  border: 1px solid #8a8a8a;
+  border-top: none;
   border-radius: 5px;
   color: white;
   position: relative;

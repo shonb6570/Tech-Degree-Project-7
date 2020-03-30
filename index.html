@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="./css/autoComplete.css"> 
         <link rel="stylesheet" href="css/styles.css">
     </head>
-    <body>
+    <body onload="load()">
         <div class="grid-container">
             <header id="header"> <!-- //grid row 1 -->
                 <h5>YourApp</h5>
@@ -272,7 +272,7 @@
                     <div class="radio-buttons">
                         <p>Send Email Notifications</p>
                         <label class="switch">
-                            <input type="checkbox" id="togBtn">
+                            <input type="checkbox" id="togBtn1">
                             <div class="slider round">
                             </div>
                         </label>
@@ -280,7 +280,7 @@
                     <div class="radio-buttons">    
                         <p>Set Profile to Public</p>
                         <label class="switch">
-                            <input type="checkbox" id="togBtn">
+                            <input type="checkbox" id="togBtn1">
                             <div class="slider round">
                             </div>
                         </label>
@@ -330,16 +330,17 @@
                         <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
                     </select>
                     <div class="settings-button">
-                        <button class="button-primary" id="save">Save</button>
-                        <button class="button-disabled" id="cancel">Cancel</button>
+                        <button class="button-primary" id="save" value="save" onclick="save()">Save</button>
+                        <button class="button-disabled" id="cancel" value="delete" onclick="clearSettings()">Cancel</button>
                     </div>
                 </section>
-                <script src="js/autoCompletejs/autoComplete.js"></script>
-                <script src="js/autoCompletejs/index.js" type="module"></script>
-                <script src="js/script.js" async defer></script>
             </div>
             <!-- main div end -->
         </div> 
         <!-- grid-container div end -->
+        <script src="js/autoCompletejs/autoComplete.js"></script>
+        <script src="js/autoCompletejs/index.js" type="module"></script>
+        <script src="js/script.js" async defer></script>
+        <!-- save local storage script -->
     </body>
 </html>
