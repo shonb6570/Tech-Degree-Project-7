@@ -31,4 +31,8 @@ const autoCompletejs = new autoComplete({
       },
       element: "li"
   },
+  onSelection: feedback => { 
+    feedback.event.preventDefault();
+    document.querySelector("#autoComplete").value = feedback.selection.value;
+  }
 });

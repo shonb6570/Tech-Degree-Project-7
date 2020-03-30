@@ -64,7 +64,7 @@ bellIcon.addEventListener('click', e => {
 
 window.addEventListener('click', e => {
     const element = e.target;
-    if(element != bellIcon) {
+    if(element != bellIcon && element != closeBtn && element != dropDown) {
         dropDown.classList.add("hidden");
     }
 });
@@ -312,14 +312,18 @@ send.addEventListener('click', () => {
 
 // <--------          local storage function                ---------> //
 
+const storageSettings = [];
 
 function save(){
-    localStorage.setItem('togBtn1', togBtn1.checked);
+    storageSettings.push(togBtn1.checked);
+    storageSettings.push(togBtn2.checked);
+    localStorage.setItem('settings', JSON.stringify(storageSettings));
 }
 
 function load(){    
-    let checked = JSON.parse(localStorage.getItem('togBtn1'));
-    document.getElementById('togBtn1').checked = checked;
+    let checked = JSON.parse(localStorage.getItem('settings'));
+    document.getElementById('togBtn1').checked = checked[0];
+    document.getElementById('togBtn2').checked = checked[1];
 }
 
 function clearSettings(){
