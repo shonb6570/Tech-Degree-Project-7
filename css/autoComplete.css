@@ -176,3 +176,11 @@
     background-position: left 1.1rem top 0.8rem;
   }
 }
+
+@media (min-width: 1600px) {
+
+  #autoComplete {
+      width: 92.5%;
+  }
+
+}
