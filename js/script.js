@@ -143,9 +143,14 @@ const trafficOptions = {
         xAxes: [{
             gridLines: {
                 offsetGridLines: true,
-                beginAtZero: true
+                beginAtZero: true,
             },
-            offset: false,                   
+            offset: false,   
+            ticks: {
+                fontFamily: "'Raleway', sans-serif", 
+                fontColor: '#3a3a3a', 
+                fontStyle: '500'
+            },                
         }],
         yAxes: [{
             gridLines: {
@@ -155,11 +160,14 @@ const trafficOptions = {
             offset: false,
             ticks: {
                 stepSize: 500,
+                fontFamily: "'Raleway', sans-serif", 
+                fontColor: '#3a3a3a', 
+                fontStyle: '300'
             }
         }]
     },
     legend: {
-        display: false
+        display: false,
     }
 };
 
@@ -249,8 +257,22 @@ const dailyOptions = {
             },
             ticks: {    
                 stepSize : 50,
+                fontFamily: "'Raleway', sans-serif", 
+                fontColor: '#3a3a3a', 
+                fontStyle: '500'
+            }
+        }],
+        xAxes: [{
+            ticks: {    
+                stepSize : 50,
+                fontFamily: "'Raleway', sans-serif", 
+                fontColor: '#3a3a3a', 
+                fontStyle: '500'
             }
         }]
+    },
+    legend: {
+        display: false,
     }
 };
 
@@ -286,7 +308,9 @@ const mobileOptions = {
         position: 'right',
         labels: {
             boxWidth:  20,
-            fontStyle: 'bold'
+            fontFamily: "'Raleway', sans-serif", 
+            fontColor: '#3a3a3a', 
+            fontStyle: '500'
         }
     }
 };

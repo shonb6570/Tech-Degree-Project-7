@@ -11,23 +11,42 @@ $wistful:           #ACADD7;
 $glacier:           #73B1BF;
 $ship-cove-light:   #7377BF;
 $spindle:           #c1c3f0;
+$melrose:           #C1C1FF;
+$Anakiwa:           #90E3FF;
+
 
 // Base style colors //
 
-$button-hover: $de-york;
-$border-color: $wild-dove;
-$border-color-dark: rgba(59, 59, 59, .65);
-$icon-non-active: $spun-pearl;
-$icon-hover: $gallery;
-$link-hover: $spindle;
-$font-main-color: $cod-grey;
-$main-color: $ship-cove;
-$nav-color: $mulled-wine;
-$main-color-lighter: $ship-cove-light;
-$slider-on: $de-york;
-$slider-off: $mulled-wine;
-$alert-bell-unread: $de-york;
-$banner-color: $wistful;
+$button-hover:         $de-york;
+$border-color:         $wild-dove;
+$border-color-dark:    rgba(59, 59, 59, .65);
+$icon-non-active:      $spun-pearl;
+$icon-hover:           $gallery;
+$link-hover:           $spindle;
+$font-main-color:      $cod-grey;
+$main-color:           $ship-cove;
+$nav-color:            $mulled-wine;
+$main-color-lighter:   $ship-cove-light;
+$slider-on:            $de-york;
+$slider-off:           $mulled-wine;
+$alert-bell-unread:    $de-york;
+$banner-color:         $wistful;
+$company-logo:         $melrose;
+$company-logo-hover:   $Anakiwa;
+
+
+// Font Stacks //
+
+$main-font:      'Raleway', sans-serif;
+$secondary-font: 'Lato', sans-serif;
+
+//Font weights //@extend
+
+$font-thin:        100;
+$font-extra-light: 200;
+$font-light:       300;
+$font-regular:     400;
+$font-bolder:      500;
 
 
 // main styles //
@@ -38,12 +57,55 @@ body {
 
 h2, 
 h3, 
-h5, 
 p,
 li,
 select,
 button {
     color: $font-main-color;
+}
+
+#dynamicAnalyticsLogo {
+    color: $company-logo;
+}
+
+#dynamicAnalyticsLogo:hover {
+    color: $company-logo-hover;
+    transition: .5s ease-in;
+}
+
+.main-header-search input,
+.main-header h2,
+h3,
+.form-field::placeholder,
+#messageField::placeholder,
+#timezone {
+    font-family: $main-font;
+    font-weight: $font-extra-light;
+}
+
+button {
+    font-family: $main-font;
+    font-weight: $font-bolder;
+    cursor: pointer;
+}
+
+.settings,
+.alert {
+    font-family: $main-font;
+}
+
+.social {
+    font-family: $secondary-font;
+    font-weight: $font-thin;
+}
+
+.members-container {
+    font-family: $secondary-font;
+    font-weight: $font-light;
+}
+
+.settings p {
+    font-weight: $font-bolder;
 }
 
 a {
@@ -125,6 +187,7 @@ main {
 
 .widget-container-full, .widget-container-half {
     width: 85%;
+    margin-left: 8%;
 }
 
 
@@ -135,9 +198,10 @@ main {
 .profile-img {
     height: 35px;
     width:  35px;
+    padding: 11.5px 0;
     border: solid .25px $border-color-dark;
     border-radius: 50% 50%;
-    margin: auto 10px auto 20px;
+    margin: auto 0 auto 10px;
 }
 
 header {
@@ -146,12 +210,12 @@ header {
     background-color: $main-color;
 }
 
-header h3 {
-    padding-right: 15px; 
+header:first-child {
+    padding-left: 15px;
 }
 
-header h5 {
-    padding-left: 15px;
+#user{
+    padding: 0 20px 0 5px;
 }
 
 #header-vertical-line{ 
@@ -199,28 +263,33 @@ header h5 {
     cursor: pointer;
 }
 
+
 .navIcon:hover path,
 #bellIcon:hover path {
-  fill: $icon-hover;
-  transition: .5s;
+    fill: $icon-hover;
+    transition: .5s ease-in;
 }
 
-header h5:hover,
+.button-primary:hover,
 header h3:hover {
-color: $icon-hover;
-transition: .5s;
+    color: $icon-hover;
+    transition: .5s ease-in;
+}
+
+header h3:hover {
+    cursor: cell;
 }
 
 .members-text a:hover,
 .next:hover, 
 a:hover {
-color: $link-hover;
-transition: .5s;
+    color: $link-hover;
+    transition: .5s;
 }
 
 .btn:hover {
-color: $button-hover;
-transition: .5s;
+    color: $button-hover;
+    transition: .5s;
 }
 
 .dropbtn:focus,
@@ -393,7 +462,7 @@ nav a {
 
 .active {
     background-color: rgb(157, 245, 157);
-    padding: 2px 5px;
+    padding: 6px 9px;
     border-radius: 20px;
 }
 
@@ -672,7 +741,6 @@ nav a {
   }
 
 
-
 @media (min-width: 768px) {
     .grid-container {
         grid-template-columns: 55px 1fr;
@@ -704,6 +772,7 @@ nav a {
     }
     .widget-container-half {
         padding-left: 15px;
+        margin-left: 0;
     }
 
     #nav-buttons {
@@ -739,7 +808,6 @@ nav a {
     #traffic-chart {
         max-height: 400px !important;
         max-width: 800px !important;
-        margin-left: 8%;
     }
     
     .daily, 

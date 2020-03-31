@@ -4,12 +4,55 @@ body {
 
 h2,
 h3,
-h5,
 p,
 li,
 select,
 button {
   color: #3a3a3a;
+}
+
+#dynamicAnalyticsLogo {
+  color: #C1C1FF;
+}
+
+#dynamicAnalyticsLogo:hover {
+  color: #90E3FF;
+  transition: 0.5s ease-in;
+}
+
+.main-header-search input,
+.main-header h2,
+h3,
+.form-field::placeholder,
+#messageField::placeholder,
+#timezone {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+}
+
+button {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.settings,
+.alert {
+  font-family: "Raleway", sans-serif;
+}
+
+.social {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+}
+
+.members-container {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.settings p {
+  font-weight: 500;
 }
 
 a {
@@ -87,14 +130,16 @@ main {
 
 .widget-container-full, .widget-container-half {
   width: 85%;
+  margin-left: 8%;
 }
 
 .profile-img {
   height: 35px;
   width: 35px;
+  padding: 11.5px 0;
   border: solid 0.25px rgba(59, 59, 59, 0.65);
   border-radius: 50% 50%;
-  margin: auto 10px auto 20px;
+  margin: auto 0 auto 10px;
 }
 
 header {
@@ -103,12 +148,12 @@ header {
   background-color: #7477BF;
 }
 
-header h3 {
-  padding-right: 15px;
+header:first-child {
+  padding-left: 15px;
 }
 
-header h5 {
-  padding-left: 15px;
+#user {
+  padding: 0 20px 0 5px;
 }
 
 #header-vertical-line {
@@ -153,13 +198,17 @@ header h5 {
 .navIcon:hover path,
 #bellIcon:hover path {
   fill: #ECECEC;
-  transition: 0.5s;
+  transition: 0.5s ease-in;
 }
 
-header h5:hover,
+.button-primary:hover,
 header h3:hover {
   color: #ECECEC;
-  transition: 0.5s;
+  transition: 0.5s ease-in;
+}
+
+header h3:hover {
+  cursor: cell;
 }
 
 .members-text a:hover,
@@ -327,7 +376,7 @@ nav a {
 
 .active {
   background-color: #9df59d;
-  padding: 2px 5px;
+  padding: 6px 9px;
   border-radius: 20px;
 }
 
@@ -629,6 +678,7 @@ input:checked + .slider:after {
 
   .widget-container-half {
     padding-left: 15px;
+    margin-left: 0;
   }
 
   #nav-buttons {
@@ -665,7 +715,6 @@ input:checked + .slider:after {
   #traffic-chart {
     max-height: 400px !important;
     max-width: 800px !important;
-    margin-left: 8%;
   }
 
   .daily,
