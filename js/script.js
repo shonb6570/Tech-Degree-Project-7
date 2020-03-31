@@ -45,6 +45,10 @@ const send = document.getElementById("send");
     //local storage selectors
 const togBtn1 = document.getElementById("togBtn1");
 const togBtn2 = document.getElementById("togBtn2");
+const timezone = document.getElementById("timezone");
+
+    //local storage setting array
+const storageSettings = [];
 
 
 // <--------          Drop-down messages               ---------> //
@@ -312,18 +316,18 @@ send.addEventListener('click', () => {
 
 // <--------          local storage function                ---------> //
 
-const storageSettings = [];
-
 function save(){
     storageSettings.push(togBtn1.checked);
     storageSettings.push(togBtn2.checked);
+    storageSettings.push(timezone.value);
     localStorage.setItem('settings', JSON.stringify(storageSettings));
 }
 
 function load(){    
     let checked = JSON.parse(localStorage.getItem('settings'));
-    document.getElementById('togBtn1').checked = checked[0];
-    document.getElementById('togBtn2').checked = checked[1];
+    togBtn1.checked = checked[0];
+    togBtn2.checked = checked[1];
+    timezone.value = checked[2];
 }
 
 function clearSettings(){
