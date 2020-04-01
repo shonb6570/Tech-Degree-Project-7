@@ -4,6 +4,7 @@
 
 .s-media-container {
     border-top: 1px solid $wild-dove;
+
     @media (min-width: 768px) {
         border-top: none;
     }
@@ -11,6 +12,7 @@
 
 .s-media-container h3 {
     padding-left: 25px;
+    
     @media (min-width: 1024px) {
         padding-left: 14.2%;
     }

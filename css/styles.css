@@ -1099,11 +1099,8 @@ a:hover {
   border-bottom: none;
 }
 
+.members-container p,
 .members-container a {
-  margin: auto 0;
-}
-
-.members-container p {
   margin: auto 0;
 }
 
@@ -1122,8 +1119,7 @@ a:hover {
   }
 }
 
-.members,
-.message {
+.members {
   padding-top: 5px;
   padding-left: 20px;
 }
@@ -1172,6 +1168,10 @@ a:hover {
   padding-left: 5px;
 }
 
+.message {
+  padding-top: 5px;
+  padding-left: 20px;
+}
 @media (min-width: 1024px) {
   .message {
     margin-left: 25%;

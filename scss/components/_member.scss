@@ -83,10 +83,8 @@
     border-bottom: none;
 }
 
+.members-container p, 
 .members-container a {
-    margin: auto 0;
-}
-.members-container p {
     margin: auto 0;
 }
 
@@ -105,8 +103,7 @@
     }
 }
 
-.members,
-.message {
+.members {
     padding-top: 5px;
     padding-left: 20px;
 }
@@ -125,7 +122,7 @@
 
 #userField {
     @media (min-width: 768px) {
-      margin-top: auto;
+        margin-top: auto;
     }
 }
 

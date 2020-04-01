@@ -61,22 +61,22 @@ nav a {
         transition: 1.5s ease-in-out;
     }  
     @media (min-width: 1250px) {
-            width: 35em;
-            transition: 1.5s ease-in-out;
+        width: 35em;
+        transition: 1.5s ease-in-out;
     } 
 }
 
 
 #nav-buttons {
     @media (min-width: 768px) {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
     }
 }
 
 nav a:nth-child(1) {
     @media (min-width: 768px) {
-    margin-top: 5px;
+       margin-top: 5px;
     }
 }
