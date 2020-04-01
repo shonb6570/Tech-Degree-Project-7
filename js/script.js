@@ -97,7 +97,7 @@ window.onscroll = function() {stickyDiv()};
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function stickyDiv() {
-  if (window.pageYOffset > sticky - 60) {
+  if (window.pageYOffset > sticky - 113) {
     alertBanner.classList.add("sticky");
   } else {
     alertBanner.classList.remove("sticky");
