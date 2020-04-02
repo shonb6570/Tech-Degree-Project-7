@@ -63,15 +63,14 @@ bellIcon.addEventListener('click', e => {
         dropDown.classList.toggle("show");
 });
 
-/* Close the dropdown menu if the user clicks outside of it */
+// /* Close the dropdown menu if the user clicks outside of it */
 
-
-window.addEventListener('click', e => {
-    const element = e.target;
-    if(element != bellIcon && element != closeBtn && element != dropDown) {
-        dropDown.classList.add("hidden");
-    }
-});
+// window.addEventListener('click', e => {
+//     const element = e.target;
+//     if(element != bellIcon && element != closeBtn && element != dropDown) {
+//         dropDown.classList.add("hidden");
+//     }
+// });
   
 
 // <--------          Alert banner                     ---------> //

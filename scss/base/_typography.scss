@@ -83,10 +83,14 @@ button {
 .main-header h2,
 h3,
 .form-field::placeholder,
-#messageField::placeholder,
-#timezone {
+#messageField::placeholder {
     font-family: $main-font;
     font-weight: $font-extra-light;
+}
+
+#timezone {
+    font-family: $main-font;
+    font-size: 14.5px;
 }
 
 button {

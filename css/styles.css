@@ -414,10 +414,14 @@ button {
 .main-header h2,
 h3,
 .form-field::placeholder,
-#messageField::placeholder,
-#timezone {
+#messageField::placeholder {
   font-family: "Raleway", sans-serif;
   font-weight: 200;
+}
+
+#timezone {
+  font-family: "Raleway", sans-serif;
+  font-size: 14.5px;
 }
 
 button {
@@ -516,10 +520,9 @@ main {
 .profile-img {
   height: 35px;
   width: 35px;
-  padding: 11.5px 0;
   border: solid 0.25px rgba(59, 59, 59, 0.65);
   border-radius: 50% 50%;
-  margin: auto 0 auto 10px;
+  margin: 11.5px 0 11.5px 10px;
 }
 
 header {
@@ -764,7 +767,7 @@ a:hover {
 .close-content {
   position: absolute;
   top: 15px;
-  right: 10px;
+  right: 15px;
 }
 
 .two {
@@ -779,6 +782,7 @@ a:hover {
   display: block;
   border-radius: 5px;
   padding: 0 8px 8px;
+  font-size: 13px;
 }
 
 .hidden {
