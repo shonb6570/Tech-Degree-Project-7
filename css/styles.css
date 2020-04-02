@@ -606,7 +606,6 @@ a:hover {
 }
 
 .social-text {
-  display: column;
   flex-direction: row;
   margin: auto;
 }
